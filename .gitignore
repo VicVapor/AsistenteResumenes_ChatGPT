@@ -1,0 +1,25 @@
+# .gitignore
+
+# Ignorar la carpeta de entorno virtual de Python
+venv/
+__pycache__/
+
+# Ignorar los archivos de bytecode de Python
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar los archivos de configuración de tu IDE (PyCharm)
+.idea/
+
+# Ignorar los archivos de registro
+*.log
+
+# Ignorar los archivos de base de datos SQLite (si los estás utilizando)
+*.sqlite
+
+# Ignorar el archivo de variables de entorno
+.env
+
+# Ignorar la carpeta de archivos subidos
+uploads/

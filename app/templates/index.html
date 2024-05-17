@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GPT te Resume</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Ingresa el archivo a resumir</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Seleccionar tipo de entrada:</label><br>
+            <input type="radio" id="fileOption" name="inputType" value="file" checked>
+            <label for="fileOption">Subir archivo PDF</label><br>
+            <input type="radio" id="textOption" name="inputType" value="text">
+            <label for="textOption">Ingresar texto</label>
+        </div>
+        <div class="form-group" id="fileGroup">
+            <label for="fileUpload">Subir archivo PDF:</label>
+            <input type="file" class="form-control-file" id="fileUpload" name="file" accept=".pdf">
+        </div>
+        <div class="form-group" id="textGroup" style="display: none;">
+            <label for="textInput">Ingresar texto a resumir:</label>
+            <textarea class="form-control" id="textInput" name="text"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="languageSelect">Seleccionar idioma:</label>
+            <select class="form-control" id="languageSelect" name="language">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Generar Resumen</button>
+    </form>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('fileOption').addEventListener('change', function() {
+        document.getElementById('fileGroup').style.display = 'block';
+        document.getElementById('textGroup').style.display = 'none';
+    });
+    document.getElementById('textOption').addEventListener('change', function() {
+        document.getElementById('fileGroup').style.display = 'none';
+        document.getElementById('textGroup').style.display = 'block';
+    });
+</script>
+</body>
+</html>
